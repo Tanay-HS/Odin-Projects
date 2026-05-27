@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM manipulation</title>
+</head>
+<body>
+    <h1>THE TITLE OF YOUR WEBPAGE</h1>
+    <div id="container"></div>
+</body>
+
+<script>
+    const container = document.querySelector("#container");
+
+    const red = document.createElement("p");
+    red.textContent = "Hey! I'm Red";
+    red.style.color = "red";
+    container.appendChild(red);
+
+    const blue = document.createElement("h3");
+    blue.textContent = "Iam a blue h3!";
+    blue.style.color = "blue";
+    container.appendChild(blue);
+
+
+
+    const content = document.createElement("div");
+    content.classList.add("content");
+
+    const x = document.createElement("h1");
+    x.textContent = "Iam in a div!";
+
+    const y = document.createElement("p");
+    y.textContent = "Me too !!";
+
+    content.textContent = "This is the glorious text-content!";
+    content.appendChild(x);
+    content.appendChild(y);
+
+
+    container.appendChild(content);
+</script>
+</html>
