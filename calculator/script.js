@@ -11,13 +11,13 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
-    if(b == 0) return "Cant divide by zero";
+    if (b == 0) return "Cant divide by zero";
 
     return a / b;
 }
 
-function operate(a, b , operator = "+") {
-    if(b === undefined) return 0;
+function operate(a, b, operator = "+") {
+    if (b === undefined) return 0;
     a = +a;
     b = +b;
     switch (operator) {
@@ -45,32 +45,49 @@ const display = document.querySelector(".screen");
 let a = 0, b = undefined, operator = undefined;
 function handleClick(e) {
     if (e.target.tagName === 'BUTTON') {
-
-
         const btn = e.target;
         const operations = "+-/*";
-        const val = e.target.textContent.trim();
+        const currentKey = btn.textContent.trim();
 
-        if(val === "="){
-            a = operate(a, b, operator);
-            display.textContent = `${a}`;
+        // 1. EQUALS SIGN
+        if (currentKey === "=") {
+            if (a !== undefined && b !== undefined && operator !== undefined) {
+                a = operate(a, b, operator);
+                display.textContent = `${a}`;
+                b = undefined;
+                operator = undefined;
+            }
         }
-        else if(val === "AC"){
+        // 2. CLEAR BUTTON
+        else if (currentKey === "AC") {
             a = 0;
             b = undefined;
             operator = undefined;
-            display.textContent = "";
+            display.textContent = "0";
         }
-        else if (operations.includes(val)) {
-            a = operate(a, b, operator);
-            operator = val;
-            display.textContent = `${a}`;
+        // 3. OPERATOR BUTTONS (With multi-operator fix!)
+        else if (operations.includes(currentKey)) {
+            if (b === undefined) {
+                // User is swapping operators before typing the second number
+                operator = currentKey;
+            } else if (a !== undefined && b !== undefined) {
+                // User is chaining a calculation (e.g., 5 + 5 + ...)
+                a = operate(a, b, operator);
+                display.textContent = `${a}`;
+                b = undefined;
+                operator = currentKey;
+            }
         }
+        // 4. NUMBER DIGITS
         else {
-            b = val;
+            if (operator === undefined) {
+                a = (a === 0) ? currentKey : String(a) + currentKey;
+                display.textContent = a;
+            } else {
+                b = (b === undefined) ? currentKey : String(b) + currentKey;
+                display.textContent = b;
+            }
         }
     }
-
-
-    console.log(e);
 }
+
