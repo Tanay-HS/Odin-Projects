@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    background-color: white;
+}
+
+
+.screen{
+    background-color: wheat;
+    height: 10vh;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    padding: 10px;
+    margin: 10vh auto;
+    width: 30vw;
+    height: 80vh;
+    background-color: grey;
+    border: 5px solid goldenrod;
+}
+
+.row{
+    flex: 1 1 auto;
+
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+button{
+    flex: 1 1 auto;
+}
