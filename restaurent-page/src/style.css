@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+nav, nav button{
+    font-size: 50px;
+    font-family: "Black Ops One", system-ui, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+nav button{
+    margin: 10px;
+}
+nav span{
+    margin-right: auto;
+}
+nav{
+    padding: 10px;
+    background-color: fuchsia;
+    display: flex;
+    align-items: center;
+}
