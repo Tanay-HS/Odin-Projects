@@ -1,0 +1,41 @@
+@font-face {
+    font-family: 'BadBonesFont';
+    src: url('./BitcountSingle-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+.content{
+    background-color: beige;
+}
+
+
+.chefs{
+    display: flex;
+    align-items: center;
+    font-size: 150px;
+    justify-content: center;
+    color: orangered;
+    font-family: 'BadBonesFont', sans-serif;
+}
+
+.chefs img{
+    margin: 20px 50px;
+    height: 80vh;
+    border-radius: 1em;
+}
+
+.info{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
+    width: 60vw;
+    margin: 20px auto;
+    text-align: center;
+    line-height: 40px;
+}

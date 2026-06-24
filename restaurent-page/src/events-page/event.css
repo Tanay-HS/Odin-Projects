@@ -1,0 +1,32 @@
+@font-face {
+    font-family: 'BadBonesFont';
+    src: url('./BitcountSingle-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+#eventContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: beige;
+    margin: 0;
+    padding: 0;
+}
+#eventContainer img{
+    margin-top: 50px;
+    width: 80vw;
+    border-radius: 10em;
+}
+#eventContainer .eventInfo{
+    margin: 50px;
+    text-align: center;
+    font-size: 35px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#eventContainer .eventInfo h3{
+    font-family: 'BadBonesFont', sans-serif;
+    text-align: center;
+    font-size: 100px;
+}
