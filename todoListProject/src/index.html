@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <div class="sidebar">
+            <h3>Projects</h3>
+            <div class="project-form">
+                <input type="text" id="new-project-input" placeholder="New project name...">
+                <button id="add-project-btn">Add Project</button>
+            </div>
+            <ul id="project-list"></ul>
+        </div>
+        <main>
+            <div class="main-header">
+                <h2 id="active-project-title">Select a Project</h2>
+                <button id="toggle-todo-form-btn">+ New Task</button>
+            </div>
+
+            <div id="todo-form-container" style="display: none;">
+                <form id="todo-form">
+                    <input type="text" id="todo-title-input" placeholder="Task title..." required>
+                    <input type="date" id="todo-date-input" required>
+                    <input type="text" id="todo-notes-input" placeholder="Notes (optional)...">
+                    <button type="submit">Save Task</button>
+                </form>
+            </div>
+            
+            <ul id="todo-list"></ul>
+        </main>
+    </div>
+</body>
+
+</html>
